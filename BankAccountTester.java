@@ -98,13 +98,13 @@ public class BankAccountTester {
 
 	@Test
 	public void testChargePositiveAmount() {
-		Assert.assertFalse(this.bankAccount.charge(30));
+		Assert.assertTrue(this.bankAccount.charge(30));
 		Assert.assertEquals(70, this.bankAccount.getAccountBalance(), 0.001);
 	}
 
 	@Test
 	public void testChargeOverAccountAmount() {
-		Assert.assertFalse(this.bankAccount.charge(200));
+		Assert.assertTrue(this.bankAccount.charge(200));
 		Assert.assertEquals(-100, this.bankAccount.getAccountBalance(), 0.001);
 	}
 
